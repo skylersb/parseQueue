@@ -1,0 +1,51 @@
+
+<!-- Add Poll Question INPUT -->
+<div class="submitQuestionContainer">
+	
+	<input id="questionBox" class="form-control question-box" type="text" ng-model="pollQuestion" placeholder="Enter Poll Question">
+
+	<!-- Add Options INPUT-->
+		<div id="optionClass" class="form-group" ng-repeat="newOption in newOptions">
+			<input type="text" ng-model="newOption.text" name="" placeholder="write an option" class="optionBox">
+			<!-- Remove Options -->
+			<i class="fa fa-trash fa-lg" ng-click="removeOption()"></i>
+		</div>
+		</div>
+	<!-- Add Another Option BUTTON -->
+	<div class="addBtn">
+		<button class="btn btn-primary"  ng-click="addNewOption()">Add Option</button>
+	</div>
+<!-- CREATE POLL BUTTON -->
+	<div class="createPollBtn">
+	<button id="pollBtn" class="btn btn-primary" ng-click="postData()">Create Poll</button>
+	</div>
+<div class="row">
+	<div class="col-md-6">
+		<div id="panle1" class="panel1">
+			<div class="top-panel1">
+				<h1 id="newTitle">New Polls</h1>
+			</div>
+			<div class="mainPolls"ng-repeat="question in questions">
+				{{question.text}} <br /> 
+				<!-- {{question.objectId}} -->
+				<!-- <div ng-repeat="option in question.options" >
+					{{option.text}}
+				</div> -->
+
+				<!-- TAKE POLL BTN -->
+				<button ng-click="takePoll(question)" class="btn btn-primary">Take Poll</button>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div id="panel2" class="panel2">
+			<div class="top-panel2">
+				<h1 id="completeTitle">Trending Polls</h1>
+			</div>
+			<div class="mainPolls" ng-repeat="question in questions | filter: {status:'yellow'}">{{question.text}}
+				<button ng-click="deleteQuestion()(question)" class="btn btn-primary">TakePoll</button>
+			</div>
+		</div>
+	</div>
+</div>
+	

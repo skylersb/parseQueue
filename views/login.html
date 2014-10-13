@@ -1,0 +1,39 @@
+<form ng-hide="currentUser">
+    <h2>Sign up</h2>
+    Email: <input type="email" ng-model="user.email" /><br />
+    Username: <input type="text" ng-model="user.username" /><br />
+    Password: <input type="password" ng-model="user.password" /><br />
+    <button ng-click="signUp(user)">Sign up</button>
+  </form>
+ 
+  <div ng-show="currentUser">
+    <h2>Welcome {{currentUser.get('username')}}</h2>
+    <p>You have been successfully logged in</p>
+    <button ng-click="logOut()">Log out</button>
+  </div>
+
+<!-- <p>This is the login view to sign with FACEBOOK.</p>
+	{{test}}
+ <script>
+  // Initialize Parse
+  Parse.initialize("7UaUAI1OeFixksVIkHDYvns592IGuf6a1BS1HDPH", "FPvHcwSqx1Rv9Kx6TGMrekaUqNH7k9MmbnDdqx2I");
+ 
+  window.fbAsyncInit = function() {
+    Parse.FacebookUtils.init({ // this line replaces FB.init({
+      appId      : '{804522712923804}', // Facebook App ID
+      status     : true, // check Facebook Login status
+      cookie     : true, // enable cookies to allow Parse to access the session
+      xfbml      : true
+    });
+ 
+    // Run code after the Facebook SDK is loaded.
+  };
+ 
+  (function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script> -->

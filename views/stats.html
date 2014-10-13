@@ -1,0 +1,59 @@
+<div id="pollQuestion" class="pollQuestion">
+
+	<h1>{{poll.text}}</h1>
+
+ 	<!-- //poll
+ 	{
+ 		text: "what is your fav food?",
+ 		option: [{id: 'option1', answer: 'bbq'}]
+ 	}
+
+ 	//stats
+ 	{option1: 3, option2: 1, option3: 0 }
+ -->
+ 	<!--ng repeat over poll.options>
+		{{option.text}} {{stats[option.id]}}
+	-->
+			
+	
+		<!-- <div id="chartdiv" style="width: 100%; height: 400px; background-color: #222222;" ></div> -->
+		<div class="statsWindow">
+			<create-chart></create-chart>
+		</div>
+
+
+<!-- <div ng-repeat="option in poll.options">
+	 {{option.text}} : {{stats[option.id].count}} </div><!-  --><!-- {{stats[option.id].percentage}}% -->
+</div>
+<!-- var users = [
+	{
+		name: 'Joe', 
+		age: 32,
+		gender: 'm'
+	},
+	{
+		name: 'Jerry',
+		age: 40,
+		gender: 'm'
+	},
+	{
+		name: 'Susy',
+		age: 20,
+		gender: 'f'
+	}
+]
+
+var genders = {
+	'm': {
+		count: 0
+	},
+	'f': {
+		count: 0
+	}
+}
+
+for(var i = 0; i<users.length; i++) {
+	console.log(users[i]); //{name:'Joe', gender}
+	console.log(users[i].gender); //'m'
+	genders[users[i].gender].count++;
+} -->
